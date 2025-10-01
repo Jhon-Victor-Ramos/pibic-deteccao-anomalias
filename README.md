@@ -18,7 +18,6 @@ Projeto de pesquisa para o Programa Institucional de Bolsas de Iniciação Cient
 *   [Estrutura do Repositório](#-estrutura-do-repositório)
 *   [Como Executar](#-como-executar)
 *   [Autores](#-autores)
-*   [Agradecimentos](#-agradecimentos)
 
 ---
 
