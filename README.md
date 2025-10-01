@@ -14,7 +14,7 @@ Projeto de pesquisa para o Programa Institucional de Bolsas de Iniciação Cient
 
 *   [Sobre o Projeto](#-sobre-o-projeto)
 *   [Metodologia](#-metodologia)
-*   [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+*   [Tecnologias e Fluxo de Trabalho](#-tecnologias-e-fluxo-de-trabalho)
 *   [Estrutura do Repositório](#-estrutura-do-repositório)
 *   [Como Executar](#-como-executar)
 *   [Autores](#-autores)
@@ -24,7 +24,13 @@ Projeto de pesquisa para o Programa Institucional de Bolsas de Iniciação Cient
 
 ## 🎯 Sobre o Projeto
 
-O principal objetivo desta pesquisa é entender, desenvolver e validar modelos computacionais para detecção de falhas e anomalias em séries temporais multivariadas de sensores industriais. Este projeto aborda o desafio da manutenção preditiva no contexto da Indústria 4.0, visando criar soluções que sejam tanto precisas quanto replicáveis na prática.
+Este repositório documenta a pesquisa desenvolvida no âmbito do projeto "Desenvolvimento de Modelos Computacionais para Reconhecimento de Padrões em Séries Temporais Multivariadas", que cobre três áreas de aplicação:
+
+*   ⚕️ **Saúde:** Análise de sinais biomédicos para detecção de anomalias.
+*   🏭 **Indústria:** Objetivo de desenvolver e validar modelos para detecção de falhas em sensores, abordando o desafio da manutenção preditiva no contexto da Indústria 4.0.
+*   🛡️ **Segurança Pública:** Análise de dados para identificação de padrões e prevenção de incidentes.
+
+O objetivo principal da nossa frente de trabalho na Indústria é criar soluções que sejam tanto precisas quanto replicáveis na prática, contribuindo para a confiabilidade e eficiência de sistemas produtivos.
 
 ---
 
@@ -38,9 +44,12 @@ O projeto está estruturado em três pilares principais:
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologia(s) e Fluxo de Trabalho
 
 *   **Linguagem Principal:** Python 3.x
+
+### Fluxo de trabalho:
+*   Ainda a definir
 
 ---
 
@@ -54,7 +63,6 @@ O repositório será organizado da seguinte forma:
 ├── relatorios/        # Relatórios, artigos e apresentações
 ├── src/               # Código-fonte com funções reutilizáveis (opcional)
 ├── .gitignore         # Arquivos e pastas a serem ignorados pelo Git
-├── LICENSE            # Licença do projeto (MIT)
 ├── README.md          # Este arquivo
 └── requirements.txt   # Lista de dependências Python
 ```
@@ -62,6 +70,27 @@ O repositório será organizado da seguinte forma:
 ---
 
 ## 🚀 Como Executar
+
+### Executando no Google Colab (Recomendado)
+
+Para executar os notebooks de análise e ter acesso às funções reutilizáveis da pasta `src/`, adicione o seguinte bloco de código no início de cada notebook:
+
+```python
+import sys
+
+# 1. Clona o repositório para o ambiente do Colab
+!git clone https://github.com/SEU_USUARIO/pibic-deteccao-anomalias.git
+
+# 2. Adiciona a pasta 'src' do projeto ao path do Python
+sys.path.append('/content/pibic-deteccao-anomalias/src')
+
+# 3. Agora você pode importar suas funções customizadas!
+# Exemplo:
+# from utils import carregar_dados
+# from visualizacao import plotar_resultados
+```
+
+### Executando Localmente
 
 1.  Clone este repositório:
     ```bash
