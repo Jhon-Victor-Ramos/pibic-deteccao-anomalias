@@ -106,5 +106,4 @@ sys.path.append('/content/pibic-deteccao-anomalias/src')
 ## 👥 Autores
 
 *   **Jhon Victor Ramos Martins** - [GitHub](https://github.com/Jhon-Victor-Ramos) | [LinkedIn](https://www.linkedin.com/in/jhon-victor-ramos/)
-*   **Maria Clara de Oliveira Barbosa** - [GitHub](https://github.com/Clara-Barbosa) | [LinkedIn](https://www.linkedin.com/in/maria-clara-de-oliveira-barbosa-07457b364/)
 *   **Maria Luiza da Silva Monteiro** - [GitHub](https://github.com/Maria-Luiza-ds-Monteiro) | [LinkedIn](https://www.linkedin.com/in/maria-luiza-monteiro-6a7246280/)
