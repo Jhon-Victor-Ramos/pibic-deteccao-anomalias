@@ -78,7 +78,7 @@ Para executar os notebooks de análise e ter acesso às funções reutilizáveis
 import sys
 
 # 1. Clona o repositório para o ambiente do Colab
-!git clone https://github.com/SEU_USUARIO/pibic-deteccao-anomalias.git
+!git clone https://github.com/Jhon-Victor-Ramos/pibic-deteccao-anomalias.git
 
 # 2. Adiciona a pasta 'src' do projeto ao path do Python
 sys.path.append('/content/pibic-deteccao-anomalias/src')
@@ -93,13 +93,22 @@ sys.path.append('/content/pibic-deteccao-anomalias/src')
 
 1.  Clone este repositório:
     ```bash
-    git clone https://github.com/SEU_USUARIO/pibic-deteccao-anomalias.git
+    git clone https://github.com/Jhon-Victor-Ramos/pibic-deteccao-anomalias.git
     ```
 2.  Instale as dependências necessárias:
     ```bash
     pip install -r requirements.txt
     ```
 3.  Navegue até o diretório `notebooks/` e abra o Jupyter Notebook desejado.
+
+---
+
+## Resultados Finais
+
+O modelo foi validado e atingiu **100% de Precisão** e **99.15% de Recall**, rodando em, aproximadamente, **22 ms** por janela.
+Abaixo está o gráfico demonstrando a detecção das anomalias:
+
+![Gráfico de Resultados](relatorios/grafico_final_pibic.png)
 
 ---
 
