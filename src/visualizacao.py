@@ -20,9 +20,9 @@ def plotar_analise_rms(valores_rms, predicoes, tamanho_janela, acuracia, precisa
     plt.plot(valores_rms[:, 0], label = "Sinal RMS", color = "blue")
 
     # Identifica os índices e os valores correspondentes de RMS das anomalias preditas
-    indice_anomalia = np.arange( len(valores_rms) )[predicoes == -1, 0]
+    indice_anomalia = np.arange( len(valores_rms) )[predicoes == -1]
 
-    # Faz ...
+    # Captura os valores do eixo Y (o RMS) somente quando esse dado foi considerado anômalo
     rms_anomalias = valores_rms[predicoes == -1, 0]
 
     # Faz as marcações dos dados anômalos
@@ -40,22 +40,18 @@ def plotar_analise_rms(valores_rms, predicoes, tamanho_janela, acuracia, precisa
     texto_resultados = (f"Acurácia: {acuracia: .2%}\n"
                         f"Precisão: {precisao: .2%}\n"
                         f"Recall: {recall: .2%}\n"
-                        f"Anomalias: {len(rms_anomalias): .2%}\n")
+                        f"Anomalias: {len(rms_anomalias)}\n")
 
     # Insere a caixa de texto na diagonal inferior direita do gráfico
-    plt.text(0.947, 0.05, texto_resultados, transform = plt.gcal().transAxes,
+    plt.text(0.947, 0.05, texto_resultados, transform = plt.gca().transAxes,
              fontsize=12, verticalalignment = 'bottom', horizontalalignment = 'right',
              bbox=dict(boxstyle='round', facecolor='white', alpha = 0.8))
 
     # Salva a imagem
-    plt.savefig("grafico_final_pibic.png", dpi=300, bbox_inches='tight')
+    plt.savefig("../relatorios/grafico_final_pibic.png", dpi=300, bbox_inches='tight')
 
     plt.legend()
     plt.grid(True)
     plt.show()
 
     print(f" *-> {len(rms_anomalias)} foram encontradas!")
-
-
-
-
