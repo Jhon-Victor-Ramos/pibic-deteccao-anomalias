@@ -1,118 +1,97 @@
-# Detecção de Falhas em Séries Temporais com Machine Learning
+# Detecção de Falhas em Séries Temporais Industriais com Machine Learning
 
 [![Licença: MIT](https://img.shields.io/badge/Licença-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.x](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
 
-**Status do Projeto:** Em Andamento 🚧
+> Repositório oficial com os códigos e recursos desenvolvidos para o *Programa Institucional de Bolsas de Iniciação Científica* (*PIBIC*) da *Universidade Católica de Pernambuco* (*UNICAP*, 2025-2026).
 
-Projeto de pesquisa para o Programa Institucional de Bolsas de Iniciação Científica (PIBIC) da Universidade Católica de Pernambuco (UNICAP, 2025-2026). Este repositório contém todos os códigos, notebooks e recursos desenvolvidos para o estudo.
-
-**Orientador:** [Prof. Wilmer Yecid Córdoba Camacho](http://lattes.cnpq.br/3667425974106334)
-
----
-
-## 📋 Índice
-
-*   [Sobre o Projeto](#-sobre-o-projeto)
-*   [Metodologia](#-metodologia)
-*   [Tecnologias e Fluxo de Trabalho](#-tecnologias-e-fluxo-de-trabalho)
-*   [Estrutura do Repositório](#-estrutura-do-repositório)
-*   [Como Executar](#-como-executar)
-*   [Autores](#-autores)
+**Orientador:** [Prof. Dr. Wilmer Yecid Córdoba Camacho](http://lattes.cnpq.br/3667425974106334)
 
 ---
 
-## 🎯 Sobre o Projeto
-
-Este repositório documenta a pesquisa desenvolvida no âmbito do projeto "Desenvolvimento de Modelos Computacionais para Reconhecimento de Padrões em Séries Temporais Multivariadas", que cobre três áreas de aplicação:
-
-*   ⚕️ **Saúde:** Análise de sinais biomédicos para detecção de anomalias.
-*   🏭 **Indústria:** Objetivo de desenvolver e validar modelos para detecção de falhas em sensores, abordando o desafio da manutenção preditiva no contexto da Indústria 4.0.
-*   🛡️ **Segurança Pública:** Análise de dados para identificação de padrões e prevenção de incidentes.
-
-O objetivo principal da nossa frente de trabalho na Indústria é criar soluções que sejam tanto precisas quanto replicáveis na prática, contribuindo para a confiabilidade e eficiência de sistemas produtivos.
+## Índice
+1. [Sobre o Projeto](#sobre-o-projeto)
+2. [Arquitetura e Metodologia](#arquitetura-e-metodologia)
+3. [Resultados Finais](#resultados-finais)
+4. [Estrutura do Repositório](#estrutura-do-repositório)
+5. [Como Executar](#como-executar)
+6. [Autores](#autores)
 
 ---
 
-## 🔬 Metodologia
+## Sobre o Projeto
 
-O projeto está estruturado em três pilares principais:
+Este trabalho integra o projeto guarda-chuva *"Desenvolvimento de Modelos Computacionais para Reconhecimento de Padrões em Séries Temporais Multivariadas"*. A frente de pesquisa documentada neste repositório foca exclusivamente no setor da **Indústria 4.0**, abordando o desafio da *Manutenção Preditiva*.
 
-1.  **Revisão Sistemática da Literatura:** Uma revisão aprofundada dos modelos e técnicas existentes para detecção de falhas baseada em sensores.
-2.  **Aplicação Computacional com Dados Públicos:** Implementação e avaliação de modelos como Isolation Forest, Autoencoders e CNNs em datasets conhecidos (ex: MIMII, CWRU, SECOM).
-3.  **Validação Experimental:** Desenvolvimento de um sistema real de coleta de dados usando um Raspberry Pi e diversos sensores para testar os modelos treinados em um ambiente prático.
+O objetivo principal consiste em desenvolver, treinar e validar algoritmos de detecção de anomalias não-supervisionados capazes de identificar falhas iniciais em máquinas rotativas (como rolamentos, por exemplo) a partir de sinais de vibração, garantindo viabilidade computacional para futura implementação com *Edge Computing* (ex: *Raspberry Pi*).
 
 ---
 
-## 🛠️ Tecnologia(s) e Fluxo de Trabalho
+## Arquitetura e Metodologia
 
-*   **Linguagem Principal:** Python 3.x
+Para garantir o rigor na avaliação do modelo, a pesquisa utilizou o dataset da ***Case Western Reserve University (CWRU)***, focando nos sinais do acelerômetro *Drive End* (12 kHz) operando sob carga constante (0 HP). O fluxo de trabalho de dados foi estruturado nas seguintes etapas:
 
-### Fluxo de trabalho:
-*   Ainda a definir
-
----
-
-## 📁 Estrutura do Repositório
-
-O repositório será organizado da seguinte forma:
-
-```
-├── dados/             # Datasets (brutos e processados)
-├── notebooks/         # Jupyter Notebooks com análises e modelagem
-├── relatorios/        # Relatórios, artigos e apresentações
-├── src/               # Código-fonte com funções reutilizáveis (opcional)
-├── .gitignore         # Arquivos e pastas a serem ignorados pelo Git
-├── README.md          # Este arquivo
-└── requirements.txt   # Lista de dependências Python
-```
-
----
-
-## 🚀 Como Executar
-
-### Executando no Google Colab (Recomendado)
-
-Para executar os notebooks de análise e ter acesso às funções reutilizáveis da pasta `src/`, adicione o seguinte bloco de código no início de cada notebook:
-
-```python
-import sys
-
-# 1. Clona o repositório para o ambiente do Colab
-!git clone https://github.com/Jhon-Victor-Ramos/pibic-deteccao-anomalias.git
-
-# 2. Adiciona a pasta 'src' do projeto ao path do Python
-sys.path.append('/content/pibic-deteccao-anomalias/src')
-
-# 3. Agora você pode importar suas funções customizadas!
-# Exemplo:
-# from utils import carregar_dados
-# from visualizacao import plotar_resultados
-```
-
-### Executando Localmente
-
-1.  Clone este repositório:
-    ```bash
-    git clone https://github.com/Jhon-Victor-Ramos/pibic-deteccao-anomalias.git
-    ```
-2.  Instale as dependências necessárias:
-    ```bash
-    pip install -r requirements.txt
-    ```
-3.  Navegue até o diretório `notebooks/` e abra o Jupyter Notebook desejado.
+1. **Extração de Características:** Divisão do sinal bruto de vibração em janelas temporais fixas ($1024$ amostras) e cálculo de métricas estatísticas de segunda e quarta ordem: **RMS** (para medir a energia do sinal) e **Curtose** (para identificar picos gerados por falhas).
+2. **Detecção de Novidades (Treinamento Isolado):** Para evitar o viés e o vazamento de dados (*data leakage*), a padronização de escala (`StandardScaler`) e o treinamento do modelo (`Isolation Forest`) foram realizados **exclusivamente com os dados do rolamento em estado saudável**.
+3. **Filtro de Persistência Temporal:** Aplicação de uma regra de pós-processamento que exige a detecção de anomalias em três janelas consecutivas para acionar o alarme. Essa abordagem reduz drasticamente os falsos positivos causados por variações ou ruídos isolados.
 
 ---
 
 ## Resultados Finais
 
-O modelo foi validado e atingiu **100% de Precisão** e **99.15% de Recall**, rodando em, aproximadamente, **22 ms** por janela.
-Abaixo está o gráfico demonstrando a detecção das anomalias:
+A arquitetura proposta resolveu com sucesso a limitação de densidade de anomalias comumente enfrentada pelo *Isolation Forest*. O modelo foi validado comparando o rolamento saudável (Baseline `97.mat`) com um rolamento com falha no anel interno (`105.mat`).
+
+**Métricas de Desempenho alcançadas:**
+* **Acurácia:** $99.72\%$
+* **Precisão:** $100.00\%$ *(Zero alarmes falsos no estado normal)*
+* **Recall:** $99.15\%$ *(Alta sensibilidade à falha)*
+* **Latência Média de Inferência:** $\approx 22 \text{ms}$ por janela temporal.
+
+Abaixo, o gráfico gerado pelo sistema demonstra o sinal de RMS em azul e os acionamentos de alarme do modelo demarcados em vermelho:
 
 ![Gráfico de Resultados](relatorios/grafico_final_pibic.png)
 
 ---
 
-## 👥 Autores
+## Estrutura do Repositório
 
-*   **Jhon Victor Ramos Martins** - [GitHub](https://github.com/Jhon-Victor-Ramos) | [LinkedIn](https://www.linkedin.com/in/jhon-victor-ramos/)
-*   **Maria Luiza da Silva Monteiro** - [GitHub](https://github.com/Maria-Luiza-ds-Monteiro) | [LinkedIn](https://www.linkedin.com/in/maria-luiza-monteiro-6a7246280/)
+O repositório está estruturado seguindo boas práticas de engenharia de software para ciência de dados:
+
+```text
+├── data/                    # Base de dados original (os arquivos .mat do CWRU)
+├── relatorios/              # Relatórios parciais/finais e saídas gráficas
+├── src/               
+│   ├── main.py              # Script organizador do fluxo de trabalho de Machine Learning
+│   ├── processamento.py     # Funções para extração de dados e características
+│   └── visualizacao.py      # Lógica para a plotagem dos gráficos (integração LaTeX/Matplotlib)
+├── .gitignore         
+├── README.md          
+└── requirements.txt        # Lista de dependências do Python
+```
+
+---
+
+## Como Executar
+
+O projeto foi refatorado para execução direta e modularizada.
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/Jhon-Victor-Ramos/pibic-deteccao-anomalias.git
+   cd pibic-deteccao-anomalias
+   ```
+2. Crie um ambiente virtual (não é obrigatório, mas é recomendado) e instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Execute o fluxo de trabalho principal:
+   ```bash
+   python src/main.py
+   ```
+
+---
+
+## Autores
+
+* **Jhon Victor Ramos Martins** - [GitHub](https://github.com/Jhon-Victor-Ramos) | [LinkedIn](https://www.linkedin.com/in/jhon-victor-ramos/)
+* **Maria Luiza da Silva Monteiro** - [GitHub](https://github.com/Maria-Luiza-ds-Monteiro) | [LinkedIn](https://www.linkedin.com/in/maria-luiza-monteiro-6a7246280/)
