@@ -91,7 +91,7 @@ O projeto foi refatorado para execução direta e modularizada.
 
 ---
 
-## Autores
+## Autor(s)
 
 * **Jhon Victor Ramos Martins** - [GitHub](https://github.com/Jhon-Victor-Ramos) | [LinkedIn](https://www.linkedin.com/in/jhon-victor-ramos/)
 <!-- * **Maria Luiza da Silva Monteiro** - [GitHub](https://github.com/Maria-Luiza-ds-Monteiro) | [LinkedIn](https://www.linkedin.com/in/maria-luiza-monteiro-6a7246280/) -->
